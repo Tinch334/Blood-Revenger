@@ -48,6 +48,7 @@ public class EnemyHealthHandler : MonoBehaviour
                 rigidbody.AddForce((transform.position - shotPos) * deathForce, ForceMode.Force);
             }
         }
+        Debug.Log("splash!");
         bloodSplash.Play();
         StartCoroutine(bloodForSecs(bleedingTime));
     }
