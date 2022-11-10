@@ -10,11 +10,11 @@ namespace EnemyAI
     {
         [Header("Player detection")]
         [SerializeField]
-        private int detectionAngle;
+        private int detectionAngle;//50
         [SerializeField]
-        private float detectionDistance;
+        private float detectionDistance;//15
         [SerializeField]
-        private float verticalRaycastOffset;
+        private float verticalRaycastOffset;//1
         [SerializeField]
         private LayerMask playerLayer;//Player, Obstacles
         [Header("Patrol")]
@@ -22,8 +22,24 @@ namespace EnemyAI
         private Transform[] patrolPoints;
         [SerializeField]
         private float pointDetectionDistance;//1
-
         
+        [Header("Chase")]
+        
+
+        [Header("Speeds")]
+        [SerializeField]
+        private float normalSpeed;//3.5
+        [SerializeField]
+        private float normalAcceleration;//8
+        [SerializeField]
+        private float normalAngularVelocity;//250
+        [SerializeField]
+        private float chaseSpeed;
+        [SerializeField]
+        private float chaseAcceleration;
+        [SerializeField]
+        private float chaseAngularVelocity;//350
+
         //Pathfiding
         private NavMeshAgent agent;
         private EnemyStates state;
@@ -49,16 +65,22 @@ namespace EnemyAI
         {
             Debug.Log(PlayerVisible());
 
+            if (PlayerVisible())
+                state = EnemyStates.Chasing;
+
             switch(state)
             {
                 case EnemyStates.Patroling:
                     Patrol();
+                    break;
 
-                    break;
                 case EnemyStates.Chasing:
+                    Chase();
                     break;
+
                 case EnemyStates.Searching:
                     break;
+
                 case EnemyStates.Attacking:
                     break;
             }
@@ -69,6 +91,9 @@ namespace EnemyAI
         {
             Vector2 playerPos2D = new Vector2(transform.position.x, transform.position.z);
             Vector2 patrolPos2D = new Vector2(patrolPoints[currentPatrolPoint].position.x, patrolPoints[currentPatrolPoint].position.z);
+
+            setAgentParams(normalSpeed, normalAngularVelocity, normalAcceleration);
+
 
             if (Vector2.Distance(playerPos2D, patrolPos2D) < pointDetectionDistance)
             {
@@ -83,6 +108,14 @@ namespace EnemyAI
 
                 agent.SetDestination(patrolPoints[currentPatrolPoint].position);
             }
+        }
+
+
+
+        private void Chase()
+        {
+            setAgentParams(chaseSpeed, chaseAngularVelocity, chaseAcceleration);
+            agent.SetDestination(player.transform.position);
         }
 
 
@@ -107,6 +140,14 @@ namespace EnemyAI
             }
 
             return false;
+        }
+
+
+        private void setAgentParams(float speed, float angularVelocity, float acceleration)
+        {
+            agent.speed = speed;
+            agent.angularSpeed = angularVelocity;
+            agent.acceleration = acceleration;
         }
     }
 }
