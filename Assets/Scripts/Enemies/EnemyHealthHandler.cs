@@ -29,7 +29,7 @@ public class EnemyHealthHandler : MonoBehaviour
             die(Vector3.forward);
     }
 
-    private void die(Vector3 shotPos)
+    public void die(Vector3 shotPos)
     {
         setRigidbodyState(false);
         setColliderState(true);

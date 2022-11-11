@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 namespace EnemyAI
 {
-    public class EnemyAIHandler : MonoBehaviour
+    public class EnemyAIShooting : MonoBehaviour
     {
         [Header("Player detection")]
         [SerializeField]
@@ -44,8 +44,9 @@ namespace EnemyAI
 
         [Header("Attack")]
         [SerializeField]
+        private float attackCooldown;
+        [SerializeField]
         private float attackDistance;
-
 
         //AI
         private bool alive;
@@ -89,7 +90,7 @@ namespace EnemyAI
 
             if (PlayerVisible())
             {
-                state = EnemyStates.Chasing;
+                state = EnemyStates.Attacking;
 
                 currentForgetTime = 0;
             }
@@ -109,25 +110,14 @@ namespace EnemyAI
                 }
             }
 
-            Debug.Log(state);
-
-            switch(state)
+            switch (state)
             {
                 case EnemyStates.Patroling:
                     Patrol();
                     break;
 
-                case EnemyStates.Chasing:
-                    Chase();
-                    TryAttack();
-                    break;
-
-                case EnemyStates.Searching:
-                    Search();
-                    TryAttack();
-                    break;
-
                 case EnemyStates.Attacking:
+                    TryAttack();
                     break;
             }
         }
@@ -157,43 +147,37 @@ namespace EnemyAI
         }
 
 
-
-        private void Chase()
-        {
-            setAgentParams(chaseSpeed, chaseAngularVelocity, chaseAcceleration);
-            agent.SetDestination(player.transform.position);
-        }
-
-
         private void TryAttack()
         {
+            setAgentParams(chaseSpeed, chaseAngularVelocity, chaseAcceleration);
+            Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+
             if (Vector3.Distance(transform.position, player.transform.position) < attackDistance)
             {
-                player.GetComponent<PersonajeVida>().die();
+                agent.isStopped = true;
+                Invoke("Shoot", attackCooldown);
+            }
+            else
+            {
+                agent.SetDestination(player.transform.position);
             }
         }
 
 
-        private void Search()
+        private void Shoot()
         {
-            agent.SetDestination(rememberedPlayerPos);
+            RaycastHit hitInfo;
+            Vector3 raycastOrigin = new Vector3(transform.position.x, transform.position.y + verticalRaycastOffset, transform.position.z);
+            Vector3 targetDir = player.transform.position - transform.position;
 
-            //If the enemy goes to the last position and doesn't see the player the it should star patroling again.
-            if (Vector3.Distance(transform.position, rememberedPlayerPos) < 1.5)
+            bool hit = Physics.Raycast(raycastOrigin, targetDir, out hitInfo, detectionDistance, playerLayer);
+
+            if (hit && hitInfo.transform.CompareTag("Player") && hitInfo.distance < attackDistance)
             {
-                if (!didCheck)
-                {
-                    setAgentParams(normalSpeed, normalAngularVelocity, normalAcceleration);
-                    rememberedPlayerPos = RandomNavmeshLocation(4f);
-                    didCheck = true;
-                }
-                else
-                {
-                    didCheck = false;
-                    state = EnemyStates.Patroling;
-                    Debug.Log("Patrol");
-                }
+                hitInfo.transform.GetComponent<PersonajeVida>().die();
             }
+
+            agent.isStopped = false;
         }
 
 
@@ -211,7 +195,7 @@ namespace EnemyAI
             {
                 RaycastHit hitInfo;
                 bool hit = Physics.Raycast(raycastOrigin, targetDir, out hitInfo, detectionDistance, playerLayer);
-                
+
                 //Check we have line of sight with the player
                 if (hit && hitInfo.transform.CompareTag("Player"))
                     return true;
