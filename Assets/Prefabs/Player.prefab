@@ -2548,7 +2548,6 @@ GameObject:
   - component: {fileID: 3136329013455932410}
   - component: {fileID: 3136329013455932391}
   - component: {fileID: 3136329013455932384}
-  - component: {fileID: 3136329013455932385}
   - component: {fileID: 3136329013455932386}
   m_Layer: 11
   m_Name: Player
@@ -2654,26 +2653,6 @@ MonoBehaviour:
   dashingSpeed: 1000
   dashingTime: 0.15
   dashingCooldown: 0.7
---- !u!114 &3136329013455932385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5077477625491793700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b72cf438329c0048884dea642edc641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 6669856527384816779, guid: 9c07441a63564294b86a506af4a64acc, type: 3}
-  shootingPos: {fileID: 3136329011730315688}
-  projectileSpeed: 750
-  throwKey: 32
-  Kunai: 0
-  textElement: {fileID: 0}
-  kunaiImg: {fileID: 0}
-  textContent: No hay arma de sangre
 --- !u!114 &3136329013455932386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2690,6 +2669,13 @@ MonoBehaviour:
   attackDamage: 1
   attackCooldown: 0.6
   attackDuration: 0.5
+  throwKey: 32
+  Kunai: {fileID: 0}
+  shootingPos: {fileID: 0}
+  projectileSpeed: 0
+  textElement: {fileID: 0}
+  kunaiImg: {fileID: 0}
+  textContent: 
 --- !u!1 &5105610357661866904
 GameObject:
   m_ObjectHideFlags: 0

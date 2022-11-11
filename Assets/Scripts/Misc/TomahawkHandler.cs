@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class TomahawkHandler : MonoBehaviour
 {
-    [SerializeField] private int tomahawkDamage;
+    [SerializeField] private int projectileDamage;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("colision proyectil");
         if (other.transform.CompareTag("Enemy"))
         {
-            other.transform.GetComponent<EnemyHealthHandler>().dealDamage(tomahawkDamage);
+            other.transform.GetComponent<EnemyHealthHandler>().dealDamage(projectileDamage);
+            Debug.Log("colision proyectil");
+        } 
+        else if (!other.transform.CompareTag("Player"))
+        {
+            Destroy(gameObject);
         }
-        Destroy(this.gameObject);
     }
 }
