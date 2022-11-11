@@ -49,6 +49,7 @@ namespace EnemyAI
 
         //AI
         private bool alive;
+        private Rigidbody rb;
         //Pathfiding
         private NavMeshAgent agent;
         private EnemyStates state;
@@ -67,6 +68,7 @@ namespace EnemyAI
             agent = GetComponent<NavMeshAgent>();
             state = EnemyStates.Patroling;
             player = GameObject.Find("Player");
+            rb = GetComponent<Rigidbody>();
 
             alive = true;
 
@@ -82,6 +84,7 @@ namespace EnemyAI
             //If the enemy is dead we disable the navmesh agent and return.
             if (!alive)
             {
+                Debug.Log("Dead");
                 agent.enabled = false;
 
                 return;
@@ -169,7 +172,7 @@ namespace EnemyAI
         {
             if (Vector3.Distance(transform.position, player.transform.position) < attackDistance)
             {
-                player.GetComponent<PersonajeVida>().die();
+                player.GetComponent<PersonajeVida>().Die();
             }
         }
 

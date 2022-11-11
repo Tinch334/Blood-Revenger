@@ -34,6 +34,16 @@ public class EnemyHealthHandler : MonoBehaviour
         setRigidbodyState(false);
         setColliderState(true);
         push(shotPos);
+        GetComponent<Animator>().enabled = false;
+
+        try
+        {
+            GetComponent<EnemyAI.EnemyAIHandler>().AIDie();
+        }
+        catch
+        {
+            GetComponent<EnemyAI.EnemyAIShooting>().AIDie();
+        }
     }
 
     private void push(Vector3 shotPos)

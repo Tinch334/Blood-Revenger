@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PersonajeVida : MonoBehaviour
 {
-    public void die()
+    public void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

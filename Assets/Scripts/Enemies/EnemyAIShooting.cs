@@ -174,7 +174,7 @@ namespace EnemyAI
 
             if (hit && hitInfo.transform.CompareTag("Player") && hitInfo.distance < attackDistance)
             {
-                hitInfo.transform.GetComponent<PersonajeVida>().die();
+                hitInfo.transform.GetComponent<PersonajeVida>().Die();
             }
 
             agent.isStopped = false;

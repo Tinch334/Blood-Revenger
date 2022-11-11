@@ -188,6 +188,7 @@ public class WeaponController : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            Debug.Log("ATTACKED");
             am.PlayRandomNoise(KatanaClips);
             other.GetComponent<EnemyHealthHandler>().dealDamage(attackDamage);
             getWeapon(other.GetComponent<EnemyHealthHandler>().getWeapon());
