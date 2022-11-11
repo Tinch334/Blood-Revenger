@@ -14,8 +14,9 @@ public class ProjectileHandler : MonoBehaviour
             collision.transform.GetComponent<EnemyHealthHandler>().dealDamage(projectileDamage);
             Debug.Log("colision proyectil");
         }
-        //gameObject.GetComponent<CapsuleCollider>().SetActive(false);
-        Destroy(gameObject);
-        //gameObject.SetActive(false);
+        if (!collision.transform.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

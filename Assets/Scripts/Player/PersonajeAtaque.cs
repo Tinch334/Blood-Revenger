@@ -53,6 +53,5 @@ public class PersonajeAtaque : MonoBehaviour
 
         GameObject obj = Instantiate(projectile, shootingPos.position, shootingPos.rotation);
         obj.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
-
     }
 }

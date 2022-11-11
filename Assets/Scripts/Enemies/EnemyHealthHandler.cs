@@ -9,6 +9,7 @@ public class EnemyHealthHandler : MonoBehaviour
 
     [SerializeField] private float initialHealth;
     [SerializeField] private float deathForce;
+    [SerializeField] private string weaponToGet;
 
     private float currentHealth;
 
@@ -19,7 +20,6 @@ public class EnemyHealthHandler : MonoBehaviour
         setRigidbodyState(true);
         setColliderState(false);
     }
-
 
     public void dealDamage(int damage)
     {
@@ -36,7 +36,6 @@ public class EnemyHealthHandler : MonoBehaviour
         push(shotPos);
     }
 
-
     private void push(Vector3 shotPos)
     {
         Collider[] colliders = GetComponentsInChildren<Collider>();
@@ -52,11 +51,15 @@ public class EnemyHealthHandler : MonoBehaviour
         bloodSplash.Play();
         StartCoroutine(bloodForSecs(bleedingTime));
     }
-
     IEnumerator bloodForSecs(int bleedingTime)
     {
         yield return new WaitForSeconds(bleedingTime);
         bloodSplash.Stop();
+    }
+
+    public string getWeapon()
+    {
+        return weaponToGet;
     }
 
     void setRigidbodyState(bool state)
