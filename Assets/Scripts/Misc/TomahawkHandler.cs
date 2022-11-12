@@ -5,6 +5,7 @@ using UnityEngine;
 public class TomahawkHandler : MonoBehaviour
 {
     [SerializeField] private int projectileDamage;
+    private bool detectedEnemy = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,8 +13,9 @@ public class TomahawkHandler : MonoBehaviour
         {
             other.transform.GetComponent<EnemyHealthHandler>().dealDamage(projectileDamage);
             Debug.Log("colision proyectil");
+            detectedEnemy = true;
         } 
-        else if (!other.transform.CompareTag("Player"))
+        else if (!other.transform.CompareTag("Player") && !detectedEnemy)
         {
             Destroy(gameObject);
         }
