@@ -112,8 +112,6 @@ namespace EnemyAI
                 }
             }
 
-            Debug.Log(state);
-
             switch(state)
             {
                 case EnemyStates.Patroling:

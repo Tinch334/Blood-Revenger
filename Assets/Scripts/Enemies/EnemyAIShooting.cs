@@ -172,7 +172,7 @@ namespace EnemyAI
 
             bool hit = Physics.Raycast(raycastOrigin, targetDir, out hitInfo, detectionDistance, playerLayer);
 
-            if (hit && hitInfo.transform.CompareTag("Player") && hitInfo.distance < attackDistance)
+            if (hit && alive && hitInfo.transform.CompareTag("Player") && hitInfo.distance < attackDistance)
             {
                 hitInfo.transform.GetComponent<PersonajeVida>().Die();
             }

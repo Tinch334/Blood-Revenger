@@ -243,7 +243,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000006497213, y: 0.004149786, z: 0.00085807894}
+  m_ConnectedAnchor: {x: -0.000006497289, y: 0.004149788, z: 0.0008580787}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -352,7 +352,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0014598081, y: 0.000016485248, z: 0.00002454863}
+  m_ConnectedAnchor: {x: -0.0014598083, y: 0.000016485254, z: 0.000024548659}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -552,7 +552,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000010477381, y: 0.005575352, z: -0.0000000021536826}
+  m_ConnectedAnchor: {x: 0.0000000032887337, y: 0.0055753537, z: -0.0000000026775513}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -707,6 +707,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 8111794903247617412}
+  - {fileID: 7473540854195732166}
   m_Father: {fileID: 4518042840704717383}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1003,7 +1004,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0014263815, y: 0.000007065557, z: 0.000023840616}
+  m_ConnectedAnchor: {x: 0.0014263816, y: 0.0000070655697, z: 0.000023840714}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1179,7 +1180,6 @@ GameObject:
   - component: {fileID: 4123583651924342227}
   - component: {fileID: 4123583651924342236}
   - component: {fileID: 919132149140157562}
-  - component: {fileID: 2156925152407266781}
   m_Layer: 10
   m_Name: Enemy running
   m_TagString: Enemy
@@ -1273,15 +1273,13 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 6144
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  patrolPoints: []
   pointDetectionDistance: 1
-  normalSpeed: 3.5
+  normalSpeed: 4
   normalAcceleration: 8
   normalAngularVelocity: 250
-  chaseSpeed: 6.5
-  chaseAcceleration: 15
+  chaseSpeed: 9
+  chaseAcceleration: 18
   chaseAngularVelocity: 500
   playerForgetTime: 1
   attackDistance: 1.2
@@ -1297,11 +1295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76eb550bba6f86c40a0791c0ed26f1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodSplash: {fileID: 0}
+  bloodSplash: {fileID: 7473540854195732167}
   bleedingTime: 2
   initialHealth: 1
   deathForce: 5
   weaponToGet: Kunai
+  enemyWeapon: {fileID: 0}
 --- !u!95 &919132149140157562
 Animator:
   serializedVersion: 3
@@ -1321,35 +1320,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2156925152407266781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3888999746714716413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7e2e5862b23754395e896bf6fcbfe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionAngle: 50
-  detectionDistance: 15
-  verticalRaycastOffset: 1
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 6144
-  patrolPoints: []
-  pointDetectionDistance: 0
-  normalSpeed: 3.5
-  normalAcceleration: 8
-  normalAngularVelocity: 250
-  chaseSpeed: 6.5
-  chaseAcceleration: 15
-  chaseAngularVelocity: 500
-  playerForgetTime: 1
-  attackCooldown: 1
-  attackDistance: 7
 --- !u!1 &3944394410395930813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,7 +1798,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0031441145, y: 0.0019986678, z: -0.00071310194}
+  m_ConnectedAnchor: {x: 0.0031441145, y: 0.0019986678, z: -0.0007131015}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2821,7 +2791,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000009313225, y: 0.007614497, z: -0.0000000083819085}
+  m_ConnectedAnchor: {x: 0.000000009778886, y: 0.007614498, z: -0.0000000083819085}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3147,7 +3117,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0002174043, y: 0.007523164, z: 0.00036176297}
+  m_ConnectedAnchor: {x: -0.00021740433, y: 0.007523164, z: 0.00036176297}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3571,7 +3541,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0031243118, y: 0.0019506466, z: -0.000711835}
+  m_ConnectedAnchor: {x: -0.003124312, y: 0.0019506486, z: -0.000711835}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3636,3 +3606,70 @@ Transform:
   m_Father: {fileID: 8600070465149535528}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6875381205988834140
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1506918666493005000}
+    m_Modifications:
+    - target: {fileID: 4097460961360266645, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_Name
+      value: Blood_PS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+--- !u!4 &7473540854195732166 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+  m_PrefabInstance: {fileID: 6875381205988834140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7473540854195732167 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4097460961360266651, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
+  m_PrefabInstance: {fileID: 6875381205988834140}
+  m_PrefabAsset: {fileID: 0}
