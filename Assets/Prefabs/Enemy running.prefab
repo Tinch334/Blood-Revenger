@@ -106,7 +106,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000013271347, y: 0.005575362, z: -0.0000000046566146}
+  m_ConnectedAnchor: {x: 0.0000000026775524, y: 0.0055753607, z: -0.0000000055879372}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -243,7 +243,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000006497289, y: 0.004149788, z: 0.0008580787}
+  m_ConnectedAnchor: {x: -0.000006497213, y: 0.004149786, z: 0.00085807894}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -352,7 +352,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0014597925, y: 0.000016484903, z: 0.000024546393}
+  m_ConnectedAnchor: {x: -0.0014598081, y: 0.000016485248, z: 0.00002454863}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -552,7 +552,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000011001251, y: 0.0055753496, z: 0.000000010913932}
+  m_ConnectedAnchor: {x: 0.0000000010477381, y: 0.005575352, z: -0.0000000021536826}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -865,7 +865,6 @@ Transform:
   - {fileID: 6819563138768927781}
   - {fileID: 8570222781865859116}
   - {fileID: 2419298261930651086}
-  - {fileID: 136500465022306565}
   m_Father: {fileID: 3809543418543425511}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1004,7 +1003,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0014263816, y: 0.0000070655697, z: 0.000023840714}
+  m_ConnectedAnchor: {x: 0.0014263815, y: 0.000007065557, z: 0.000023840616}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1298,7 +1297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76eb550bba6f86c40a0791c0ed26f1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodSplash: {fileID: 136500465022306564}
+  bloodSplash: {fileID: 0}
   bleedingTime: 2
   initialHealth: 1
   deathForce: 5
@@ -1829,7 +1828,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0031441145, y: 0.0019986678, z: -0.0007131015}
+  m_ConnectedAnchor: {x: 0.0031441145, y: 0.0019986678, z: -0.00071310194}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2529,7 +2528,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000008847566, y: 0.00761448, z: 0.0000000023283075}
+  m_ConnectedAnchor: {x: 0.000000006053598, y: 0.007614485, z: 0.0000000023283075}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2822,7 +2821,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000000053551044, y: 0.0076145036, z: -0.000000007916246}
+  m_ConnectedAnchor: {x: 0.000000009313225, y: 0.007614497, z: -0.0000000083819085}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3148,7 +3147,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00021740433, y: 0.007523164, z: 0.00036176297}
+  m_ConnectedAnchor: {x: -0.0002174043, y: 0.007523164, z: 0.00036176297}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3572,7 +3571,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0031243267, y: 0.0019506484, z: -0.00071182963}
+  m_ConnectedAnchor: {x: -0.0031243118, y: 0.0019506466, z: -0.000711835}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3637,94 +3636,3 @@ Transform:
   m_Father: {fileID: 8600070465149535528}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4123583652011199647
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7794462992567193604}
-    m_Modifications:
-    - target: {fileID: 4097460959420629165, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460959420629167, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460959645600032, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460959645600034, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266645, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_Name
-      value: Blood_PS
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266645, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.00011900733
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.0002372482
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.0006732953
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7499612
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.05531408
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.04636141
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.65753263
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097460961360266651, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
---- !u!4 &136500465022306565 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4097460961360266650, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-  m_PrefabInstance: {fileID: 4123583652011199647}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &136500465022306564 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4097460961360266651, guid: 819bdd62cacbb3b4ea92bce9f1d37c7b, type: 3}
-  m_PrefabInstance: {fileID: 4123583652011199647}
-  m_PrefabAsset: {fileID: 0}

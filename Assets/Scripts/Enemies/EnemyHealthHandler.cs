@@ -10,6 +10,7 @@ public class EnemyHealthHandler : MonoBehaviour
     [SerializeField] private float initialHealth;
     [SerializeField] private float deathForce;
     [SerializeField] private string weaponToGet;
+    [SerializeField] private GameObject enemyWeapon;
 
     private float currentHealth;
 
@@ -35,6 +36,7 @@ public class EnemyHealthHandler : MonoBehaviour
         setColliderState(true);
         push(shotPos);
         GetComponent<Animator>().enabled = false;
+        Destroy(enemyWeapon);
 
         try
         {
